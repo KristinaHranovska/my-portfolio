@@ -1,16 +1,13 @@
 {
-  "name": "linter",
+  "name": "my-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "vite --port 3000",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "preview": "vite preview",
-    "prepare": "husky",
-    "test": "echo 'test finished successfully'"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
