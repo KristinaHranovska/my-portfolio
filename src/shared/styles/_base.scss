@@ -1,6 +1,7 @@
 @use "./placeholders";
 @use "./variables" as var;
 @use "./functions" as fn;
+@use "./mixins";
 
 html {
   box-sizing: border-box;
@@ -10,6 +11,25 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+main {
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+
+  @include mixins.media("tablet") {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+  @include mixins.media("desktop") {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+  }
 }
 
 body {

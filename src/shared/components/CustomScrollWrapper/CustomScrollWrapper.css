@@ -1,0 +1,21 @@
+.myScroll .os-scrollbar {
+    --os-size: 8px;
+    --os-track-bg: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    --os-track-bg-hover: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    --os-handle-bg: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    --os-track-border-radius: 9px;
+    --os-handle-border-radius: 9px;
+    --os-handle-max-size: 150px;
+    --os-handle-bg-hover: linear-gradient(to right, hsl(45, 100%, 62%), hsl(35, 100%, 58%));
+    --os-handle-bg-active: linear-gradient(to right, hsl(45, 100%, 62%), hsl(35, 100%, 58%));
+}
+
+.myScroll .os-scrollbar:hover {
+    cursor: pointer;
+}
+
+/* @media (min-width: 768px) {
+    .myScroll .os-scrollbar {
+        --os-handle-max-size: 235px;
+    }
+} */

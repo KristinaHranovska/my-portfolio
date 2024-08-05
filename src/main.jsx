@@ -6,12 +6,15 @@ import 'modern-normalize';
 import 'shared/styles/style.scss';
 import App from './App.jsx';
 import { persistore, store } from '@redux/store.js';
+import { ModalProvider } from 'context/ModalContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistore}>
-        <App />
+        <ModalProvider>
+          <App />
+        </ModalProvider>
       </PersistGate>
     </Provider>
   </React.StrictMode>
