@@ -1,0 +1,69 @@
+@use "./mixins" as mx;
+@use "./variables" as var;
+@use "./functions" as fn;
+
+// fonts-style
+
+%small-text {
+    font-size: map-get(var.$font-sizes, "xxs");
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "md");
+    }
+}
+
+%main-text {
+    font-size: map-get(var.$font-sizes, "sm");
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: fn.get-color("light-gray");
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "md");
+    }
+}
+
+%main-title {
+    font-size: map-get(var.$font-sizes, "xl");
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: fn.get-color("white-2");
+
+    text-transform: capitalize;
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "xxxl");
+    }
+}
+
+%secondary-title {
+    font-size: map-get(var.$font-sizes, "lg");
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: fn.get-color("white-2");
+
+    text-transform: capitalize;
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "xl");
+    }
+}
+%ordinary-title {
+    font-size: map-get(var.$font-sizes, "md");
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    color: fn.get-color("white-2");
+
+    text-transform: capitalize;
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "lg");
+    }
+}

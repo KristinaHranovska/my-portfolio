@@ -1,12 +1,7 @@
-import { MainPage } from './pages';
-import { SharedLayout } from 'shared/components';
-
 function App() {
   return (
     <>
-      <SharedLayout>
-        <MainPage />
-      </SharedLayout>
+      <h1>Hello</h1>
     </>
   );
 }

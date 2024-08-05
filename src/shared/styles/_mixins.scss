@@ -1,37 +1,37 @@
-@import './breakpoints';
-/*
-screen types: 
-    mobile,
-    to-tablet
-    tablet,
-    to-desktop
-    desktop,
-*/
-@mixin media($_screen) {
-  @if $_screen == mobile {
-    @media screen and (min-width: $mobile) {
+@use "./variables" as var;
+
+@mixin media($screen) {
+  $breakpoint: map-get(var.$breakpoints, $screen);
+
+  @if $breakpoint {
+    @media screen and (min-width: $breakpoint) {
       @content;
     }
-  } @else if $_screen == to-tablet {
-    @media screen and (max-width: $to-tablet) {
-      @content;
-    }
-  } @else if $_screen == tablet {
-    @media screen and (min-width: $tablet) {
-      @content;
-    }
-  } @else if $_screen == to-desktop {
-    @media screen and (max-width: $to-desktop) {
-      @content;
-    }
-  } @else if $_screen == desktop {
-    @media screen and (min-width: $desktop) {
-      @content;
-    }
+  } @else {
+    @error 'Invalid breakpoint. Available options are: mobile, tablet, desktop.';
   }
 }
 
-@mixin font($_fsz, $_lnh) {
-  font-size: #{$_fsz}px;
-  line-height: calc($_lnh / $_fsz);
+@mixin ease($ease, $properties...) {
+  @if map.has-key(var.$easings, $ease) {
+    $ease: map.get(var.$easings, $ease);
+
+    transition: $ease;
+  } @else {
+    @warn "The variable $ease is not defined";
+  }
+
+  @if list.length($properties) > 0 {
+    transition-property: $properties;
+  }
+}
+
+@mixin set-border-radius($size) {
+  @if $size == "large" {
+    border-radius: 20px;
+  } @else if $size == "small" {
+    border-radius: 14px;
+  } @else {
+    @error 'Invalid size. Use "large" or "small".';
+  }
 }
