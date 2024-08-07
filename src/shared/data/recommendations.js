@@ -2,7 +2,7 @@ import {
     imagesPhoto
 } from 'shared/images';
 
-export const recommendations = [
+const recommendations = [
     {
         name: 'Olha Katrych',
         position: 'Frontend Developer (HTML5, CSS3, JavaScript, React)',
@@ -31,3 +31,5 @@ export const recommendations = [
         post: 'I worked on two team projects with Kristina, where she served as a team lead in both. The first project involved development using HTML and CSS, while the second one included the use of HTML, CSS, and JS. In both cases, collaborating with Kristina clearly demonstrated her ability to lead the team. Her role as a team lead was very clear; she adeptly managed the development process and motivated the team to achieve goals.'
     }
 ]
+
+export default recommendations
