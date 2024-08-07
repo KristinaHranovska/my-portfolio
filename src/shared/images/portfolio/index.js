@@ -11,6 +11,9 @@ import phonebook from './phonebook.webp';
 import rentcar from './rentcar.webp';
 import typestudy from './typestudy.webp';
 import webstydio from './webstydio.webp';
+import camperapi from './camperapi.webp';
+import aquatrackapi from './aquatrackapi.webp';
+import chocolateapi from './chocolateapi.webp';
 
 const imagesPortfolio = {
     aquatrack,
@@ -25,7 +28,10 @@ const imagesPortfolio = {
     phonebook,
     rentcar,
     typestudy,
-    webstydio
+    webstydio,
+    camperapi,
+    aquatrackapi,
+    chocolateapi
 }
 
 export default imagesPortfolio;
