@@ -1,13 +1,7 @@
-import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useModalContext } from 'context/useModalContext';
-import SharedLayout from 'shared/components/SharedLayout/SharedLayout';
-import ModalWindow from 'shared/components/ModalWindow/ModalWindow';
-
-const About = lazy(() => import('pages/About/About'));
-const Resume = lazy(() => import('pages/Resume/Resume'));
-const Portfolio = lazy(() => import('pages/Portfolio/Portfolio'));
-const Blog = lazy(() => import('pages/Blog/Blog'));
+import { ModalWindow, SharedLayout } from 'shared/components';
+import { About, Blog, Portfolio, Resume } from './pages';
 
 const App = () => {
   const { isOpen, modalContent } = useModalContext();
