@@ -1,0 +1,1 @@
+export { default as GeneralInform } from './components/GeneralInform/GeneralInform';

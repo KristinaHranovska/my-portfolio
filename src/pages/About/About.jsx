@@ -1,12 +1,12 @@
-import ContactsInform from 'modules/ContactsInform/ContactsInform';
-import MainInform from 'modules/MainInform/MainInform';
+import { Information } from 'modules/ContactsInform';
+import { GeneralInform } from 'modules/MainInform';
 import style from '../pagesStyle.module.scss';
 
 const About = () => {
   return (
     <main className={style.mainStyle}>
-      <ContactsInform />
-      <MainInform />
+      <Information />
+      <GeneralInform />
     </main>
   );
 };
