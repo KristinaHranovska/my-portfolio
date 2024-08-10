@@ -1,0 +1,11 @@
+@use "shared/styles/mixins";
+
+.mainStyle {
+    display: grid;
+    gap: 15px;
+
+    @include mixins.media("desktop") {
+        gap: 25px;
+        grid-template-columns: 275px 1fr;
+    }
+}
