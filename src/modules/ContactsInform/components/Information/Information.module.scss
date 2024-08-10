@@ -1,0 +1,80 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.sidebar {
+    @include mixins.set-border-radius("large");
+    @include mixins.ease("medium", "max-height");
+
+    position: relative;
+    background-color: fn.get-color("eerie-black-2");
+    border: 1px solid fn.get-color("jet");
+    padding: 15px;
+    overflow: hidden;
+    max-height: 112px;
+    box-shadow: fn.get-color("shadow-1");
+
+    &.active {
+        max-height: 405px;
+    }
+
+    &.collapsing {
+        max-height: 112px;
+    }
+
+    @include mixins.media("tablet") {
+        padding: 30px;
+    }
+    @include mixins.media("desktop") {
+        padding-top: 60px;
+    }
+}
+
+.showMore {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 15px;
+    color: fn.get-color("orange-yellow-crayola");
+    background: fn.get-color("border-gradient-onyx");
+    overflow: hidden;
+    padding: 7px;
+    box-shadow: fn.get-color("shadow-2");
+    z-index: 1;
+    // transition: var(--transition-1);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: fn.get-color("bg-gradient-jet");
+        // transition: var(--transition-1);
+        z-index: -1;
+    }
+
+    .arrow {
+        display: block;
+        stroke: fn.get-color("orange-yellow-crayola");
+        fill: fn.get-color("transparent");
+    }
+
+    @include mixins.media("desktop") {
+        display: none;
+    }
+}
+
+.content {
+    @include mixins.ease("fast", "opacity");
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+    }
+
+    &.hidden {
+        opacity: 0;
+    }
+}
