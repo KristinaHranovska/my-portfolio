@@ -1,7 +1,14 @@
+import ContactsInform from 'modules/ContactsInform/ContactsInform';
+import MainInform from 'modules/MainInform/MainInform';
+import style from '../style';
+
 const Blog = () => {
   return (
     <>
-      <h1>Blog</h1>
+      <main className={style.mainStyle}>
+        <ContactsInform />
+        <MainInform />
+      </main>
     </>
   );
 };

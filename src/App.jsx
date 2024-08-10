@@ -12,7 +12,7 @@ const Blog = lazy(() => import('pages/Blog/Blog'));
 const App = () => {
   const { isOpen, modalContent } = useModalContext();
   return (
-    <main>
+    <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<About />} />
@@ -25,7 +25,7 @@ const App = () => {
       </Routes>
 
       <ModalWindow isOpen={isOpen}>{modalContent}</ModalWindow>
-    </main>
+    </>
   );
 };
 
