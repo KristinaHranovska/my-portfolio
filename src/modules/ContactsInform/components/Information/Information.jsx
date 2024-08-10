@@ -6,11 +6,13 @@ import {
 import style from './Information.module.scss';
 import { useState } from 'react';
 import { icons as sprite } from 'shared/icons/index';
+import { useMedia } from 'hooks/useMedia';
 
 const Information = () => {
   const [visiable, setVisiable] = useState(false);
   const [collapsing, setCollapsing] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
+  const { isTablet } = useMedia();
 
   const handleClickVisiable = () => {
     if (visiable) {
@@ -35,9 +37,17 @@ const Information = () => {
       className={`${style.sidebar} ${visiable ? style.active : ''} ${collapsing ? style.collapsing : ''}`}
     >
       <button className={style.showMore} onClick={handleClickVisiable}>
-        <svg className={`${style.arrow}`} width="20" height="20">
-          <use xlinkHref={`${sprite}#icon-arrow-down`} />
-        </svg>
+        {isTablet ? (
+          <span className={style.showMoreText}>Show contacts</span>
+        ) : (
+          <svg
+            className={`${style.arrow} ${visiable ? style.animationArrow : ''}`}
+            width="20"
+            height="20"
+          >
+            <use xlinkHref={`${sprite}#icon-arrow-down`} />
+          </svg>
+        )}
       </button>
 
       <PersonalInformation />

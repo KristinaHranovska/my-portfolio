@@ -67,3 +67,13 @@
         font-size: map-get(var.$font-sizes, "lg");
     }
 }
+
+%show-more {
+    font-size: map-get(var.$font-sizes, "sm");
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: fn.get-color("orange-yellow-crayola");
+
+    text-transform: capitalize;
+}
