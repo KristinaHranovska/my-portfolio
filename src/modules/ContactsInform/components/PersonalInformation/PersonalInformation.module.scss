@@ -1,0 +1,58 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.personalInform {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include mixins.media("desktop") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+    }
+}
+
+.avatarBox {
+    background: fn.get-color("bg-gradient-onyx");
+    @include mixins.set-border-radius("large");
+
+    .photo {
+        @include mixins.media("tablet") {
+            width: 120px;
+        }
+        @include mixins.media("desktop") {
+            width: 150px;
+        }
+    }
+}
+
+.name {
+    @extend %secondary-title;
+
+    margin-bottom: 10px;
+
+    @include mixins.media("desktop") {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+.position {
+    @extend %small-text;
+
+    background: fn.get-color("onyx");
+
+    width: max-content;
+    padding: 3px 12px;
+    border-radius: 8px;
+
+    @include mixins.media("tablet") {
+        padding: 5px 18px;
+    }
+    @include mixins.media("desktop") {
+        margin: auto;
+    }
+}

@@ -10,24 +10,59 @@
     position: relative;
     background-color: fn.get-color("eerie-black-2");
     border: 1px solid fn.get-color("jet");
-    padding: 15px;
     overflow: hidden;
     max-height: 112px;
     box-shadow: fn.get-color("shadow-1");
 
+    padding: 15px;
+    margin-bottom: 15px;
+
+    @include mixins.media("tablet") {
+        width: 700px;
+        max-height: 180px;
+
+        padding: 30px;
+        margin-inline: auto;
+        margin-bottom: 30px;
+    }
+    @include mixins.media("addsize") {
+        width: 950px;
+        box-shadow: fn.get-color("shadow-5");
+    }
+
+    @include mixins.media("desktop") {
+        width: 275px;
+        position: sticky;
+        top: 60px;
+        max-height: max-content;
+        height: 100%;
+        margin-bottom: 0;
+        padding: 20px;
+        padding-top: 60px;
+        z-index: 1;
+    }
+
     &.active {
         max-height: 405px;
+
+        @include mixins.media("tablet") {
+            max-height: 584px;
+        }
+        @include mixins.media("desktop") {
+            max-height: max-content;
+        }
     }
 
     &.collapsing {
         max-height: 112px;
-    }
 
-    @include mixins.media("tablet") {
-        padding: 30px;
-    }
-    @include mixins.media("desktop") {
-        padding-top: 60px;
+        @include mixins.media("tablet") {
+            max-height: 180px;
+        }
+        @include mixins.media("desktop") {
+            max-height: max-content;
+            height: 100%;
+        }
     }
 }
 

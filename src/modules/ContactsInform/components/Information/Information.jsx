@@ -4,7 +4,7 @@ import {
   SocialsInformations,
 } from 'modules/ContactsInform';
 import style from './Information.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { icons as sprite } from 'shared/icons/index';
 import { useMedia } from 'hooks/useMedia';
 
@@ -12,7 +12,19 @@ const Information = () => {
   const [visiable, setVisiable] = useState(false);
   const [collapsing, setCollapsing] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
-  const { isTablet } = useMedia();
+  const { isTablet, isDesktop } = useMedia();
+
+  useEffect(() => {
+    if (isDesktop) {
+      setVisiable(true);
+      setContentVisible(true);
+      setCollapsing(false);
+    } else {
+      setVisiable(false);
+      setCollapsing(false);
+      setContentVisible(false);
+    }
+  }, [isDesktop]);
 
   const handleClickVisiable = () => {
     if (visiable) {
@@ -52,7 +64,7 @@ const Information = () => {
 
       <PersonalInformation />
 
-      {(visiable || collapsing) && (
+      {(visiable || collapsing || isDesktop) && (
         <div
           className={`${style.content} ${contentVisible ? style.visible : style.hidden}`}
         >

@@ -1,0 +1,34 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.mainContent {
+    @include mixins.media("addsize") {
+        position: relative;
+        width: max-content;
+        margin: auto;
+    }
+    @include mixins.media("desktop") {
+        min-width: 75%;
+        width: 75%;
+        margin: 0;
+    }
+}
+
+.aboutSection {
+    padding: 15px;
+
+    @include mixins.media("tablet") {
+        width: 700px;
+        margin-inline: auto;
+        padding: 30px;
+    }
+    @include mixins.media("addsize") {
+        width: 950px;
+        box-shadow: fn.get-color("shadow-5");
+    }
+    @include mixins.media("desktop") {
+        width: auto;
+    }
+}

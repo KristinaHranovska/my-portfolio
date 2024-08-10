@@ -1,10 +1,9 @@
 import { Information } from 'modules/ContactsInform';
 import { GeneralInform } from 'modules/MainInform';
-import style from '../pagesStyle.module.scss';
 
 const About = () => {
   return (
-    <main className={style.mainStyle}>
+    <main>
       <Information />
       <GeneralInform />
     </main>

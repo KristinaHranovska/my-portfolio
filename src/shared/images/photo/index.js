@@ -1,11 +1,11 @@
 import anna from './anna.webp';
-import anna2x from './anna2x.webp';
+import anna2x from './anna@2x.webp';
 import olha from './olha.webp';
-import olha2x from './olha2x.webp';
+import olha2x from './olha@2x.webp';
 import photo from './photo.webp';
-import photo2x from './photo2x.webp';
+import photo2x from './photo@2x.webp';
 import svitlana from './svitlana.webp';
-import svitlana2x from './svitlana2x.webp';
+import svitlana2x from './svitlana@2x.webp';
 
 const imagesPhoto = {
     anna,
