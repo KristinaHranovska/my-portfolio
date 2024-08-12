@@ -43,7 +43,7 @@
     }
 
     &.active {
-        max-height: 405px;
+        max-height: 410px;
 
         @include mixins.media("tablet") {
             max-height: 584px;
