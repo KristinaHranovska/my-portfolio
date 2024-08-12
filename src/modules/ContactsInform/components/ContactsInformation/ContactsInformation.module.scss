@@ -19,3 +19,77 @@
         }
     }
 }
+
+.contactList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @include mixins.media("tablet") {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 15px;
+    }
+
+    @include mixins.media("desktop") {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.thumbIcon {
+    position: relative;
+    background: fn.get-color("border-gradient-onyx");
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: fn.get-color("shadow-1");
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: fn.get-color("eerie-black-1");
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    @include mixins.media("tablet") {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    @include mixins.media("desktop") {
+    }
+}
+
+.iconContact {
+    stroke: fn.get-color("orange-yellow-crayola");
+    fill: fn.get-color("transparent");
+
+    @include mixins.media("tablet") {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.titleContact {
+    @extend %aside-text;
+
+    color: fn.get-color("light-gray-70");
+    margin-bottom: 2px;
+}
+
+.contactInform {
+    @extend %main-text;
+    color: fn.get-color("white-2");
+}

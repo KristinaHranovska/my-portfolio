@@ -17,6 +17,19 @@
     }
 }
 
+%aside-text {
+    font-size: map-get(var.$font-sizes, "xxs");
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+
+    text-transform: uppercase;
+
+    @include mx.media("tablet") {
+        font-size: map-get(var.$font-sizes, "xs");
+    }
+}
+
 %main-text {
     font-size: map-get(var.$font-sizes, "sm");
     font-weight: 300;
