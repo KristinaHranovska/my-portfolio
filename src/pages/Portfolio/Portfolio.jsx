@@ -3,12 +3,12 @@ import { GeneralInform } from 'modules/MainInform';
 
 const Portfolio = () => {
   return (
-    <>
-      <main>
-        <Information />
-        <GeneralInform />
-      </main>
-    </>
+    <main>
+      <Information />
+      <GeneralInform>
+        <h2>Portfolio</h2>
+      </GeneralInform>
+    </main>
   );
 };
 

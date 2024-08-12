@@ -1,0 +1,101 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: hsla(240, 1%, 17%, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid fn.get-color("jet");
+    border-radius: 12px 12px 0 0;
+    box-shadow: fn.get-color("shadow-2");
+    z-index: 5;
+
+    @include mixins.media("tablet") {
+        border-radius: 20px 20px 0 0;
+    }
+    @include mixins.media("addsize") {
+        position: absolute;
+        bottom: auto;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: max-content;
+        border-radius: 0 20px;
+        padding: 0 20px;
+        box-shadow: none;
+    }
+}
+
+.navigationList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+
+    @include mixins.media("tablet") {
+        gap: 20px;
+    }
+    @include mixins.media("addsize") {
+        gap: 30px;
+        padding: 0 20px;
+    }
+}
+
+.navLink {
+    @include mixins.ease("medium", "color");
+    @extend %small-text;
+
+    display: block;
+    position: relative;
+    color: fn.get-color("light-gray");
+    padding: 20px 15px;
+
+    @include mixins.media("addsize") {
+        font-weight: 500;
+    }
+
+    &.active,
+    &:hover,
+    &:active,
+    &:focus {
+        color: fn.get-color("orange-yellow-crayola");
+    }
+
+    &.active {
+        font-weight: 600;
+    }
+
+    &::after {
+        @include mixins.ease("medium", "transform");
+
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: fn.get-color("orange-yellow-crayola");
+        width: 100%;
+        height: 1px;
+        transform: scaleX(0);
+    }
+
+    &::after {
+        bottom: 10px;
+        left: 0;
+    }
+
+    &.active::after {
+        transform: scaleX(1);
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:hover::after,
+    &:active::after {
+        transform: scaleX(1);
+    }
+}

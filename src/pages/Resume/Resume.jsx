@@ -3,12 +3,12 @@ import { GeneralInform } from 'modules/MainInform';
 
 const Resume = () => {
   return (
-    <>
-      <main>
-        <Information />
-        <GeneralInform />
-      </main>
-    </>
+    <main>
+      <Information />
+      <GeneralInform>
+        <h2>Resume</h2>
+      </GeneralInform>
+    </main>
   );
 };
 

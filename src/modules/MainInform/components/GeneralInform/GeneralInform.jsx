@@ -1,12 +1,11 @@
+import Header from '../Header/Header';
 import style from './GeneralInform.module.scss';
 
-const GeneralInform = () => {
+const GeneralInform = ({ children }) => {
   return (
     <div className={style.mainContent}>
-      <nav></nav>
-      <article className={style.aboutSection}>
-        <h1>GeneralInform</h1>
-      </article>
+      <Header />
+      <article className={style.articleSection}>{children}</article>
     </div>
   );
 };

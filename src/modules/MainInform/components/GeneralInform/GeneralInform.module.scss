@@ -16,7 +16,13 @@
     }
 }
 
-.aboutSection {
+.articleSection {
+    @include mixins.set-border-radius("large");
+
+    background: fn.get-color("eerie-black-2");
+    border: 1px solid fn.get-color("jet");
+    box-shadow: fn.get-color("shadow-1");
+
     padding: 15px;
 
     @include mixins.media("tablet") {
