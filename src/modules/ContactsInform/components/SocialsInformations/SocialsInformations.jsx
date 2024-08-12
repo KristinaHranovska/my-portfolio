@@ -6,7 +6,7 @@ const SocialsInformations = () => {
     <div>
       <ul className={style.socialList}>
         <li className={style.thumbIcon}>
-          <a href="">
+          <a href="https://t.me/krystyna_hranovska" target="_blank">
             <svg className={`${style.iconSocial}`} width="18" height="18">
               <use xlinkHref={`${sprite}#icon-telegram`} />
             </svg>
@@ -14,7 +14,10 @@ const SocialsInformations = () => {
         </li>
 
         <li className={style.thumbIcon}>
-          <a href="">
+          <a
+            href="https://www.linkedin.com/in/krystyna-hranovska/"
+            target="_blank"
+          >
             <svg className={`${style.iconSocial}`} width="18" height="18">
               <use xlinkHref={`${sprite}#icon-linkedin`} />
             </svg>
@@ -22,7 +25,10 @@ const SocialsInformations = () => {
         </li>
 
         <li className={style.thumbIcon}>
-          <a href="">
+          <a
+            href="https://www.instagram.com/kristina.granowskay/"
+            target="_blank"
+          >
             <svg className={`${style.iconSocial}`} width="18" height="18">
               <use xlinkHref={`${sprite}#icon-instagram`} />
             </svg>
@@ -30,7 +36,7 @@ const SocialsInformations = () => {
         </li>
 
         <li className={style.thumbIcon}>
-          <a href="">
+          <a href="https://github.com/KristinaHranovska" target="_blank">
             <svg className={`${style.iconSocial}`} width="18" height="18">
               <use xlinkHref={`${sprite}#icon-github`} />
             </svg>
