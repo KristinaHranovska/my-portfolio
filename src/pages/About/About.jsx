@@ -1,12 +1,19 @@
 import { Information } from 'modules/ContactsInform';
-import { GeneralInform } from 'modules/MainInform';
+import {
+  AboutMe,
+  GeneralInform,
+  Recommendation,
+  WhatImDoing,
+} from 'modules/MainInform';
 
 const About = () => {
   return (
     <main>
       <Information />
       <GeneralInform>
-        <h2>About me</h2>
+        <AboutMe />
+        <WhatImDoing />
+        <Recommendation />
       </GeneralInform>
     </main>
   );

@@ -1,4 +1,4 @@
-import Header from '../Header/Header';
+import { Header } from 'modules/MainInform';
 import style from './GeneralInform.module.scss';
 
 const GeneralInform = ({ children }) => {

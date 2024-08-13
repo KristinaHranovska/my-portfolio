@@ -21,6 +21,7 @@
     align-items: center;
     box-shadow: fn.get-color("shadow-1");
     z-index: 1;
+    cursor: pointer;
 
     &:hover,
     &:active,
