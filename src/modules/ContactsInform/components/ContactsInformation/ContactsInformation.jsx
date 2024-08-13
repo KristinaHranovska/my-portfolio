@@ -57,7 +57,7 @@ const ContactsInformation = () => {
           </div>
           <div>
             <h2 className={style.titleContact}>Location</h2>
-            <p className={style.contactInform}>Ukraine, Dnipro</p>
+            <p className={style.contactInform}>Dnipro, Ukraine</p>
           </div>
         </li>
       </ul>

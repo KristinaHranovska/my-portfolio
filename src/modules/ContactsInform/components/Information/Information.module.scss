@@ -67,11 +67,11 @@
 }
 
 .showMore {
-    @include mixins.ease("slow", "background-color");
+    @include mixins.ease("slow", "background");
 
     position: absolute;
     top: -1px;
-    right: 0;
+    right: -1px;
     border-radius: 0 15px;
     color: fn.get-color("orange-yellow-crayola");
     background: fn.get-color("border-gradient-onyx");
@@ -84,7 +84,7 @@
     &:hover,
     &:active,
     &:focus {
-        background-color: fn.get-color("vegas-gold");
+        background: fn.get-color("bg-gradient-yellow-1");
 
         .showMoreText {
             color: fn.get-color("white-1");
@@ -98,10 +98,16 @@
     &::before {
         content: "";
         position: absolute;
-        top: -1px;
+        top: -2px;
         inset: 1px;
         border-radius: inherit;
-        background: fn.get-color("bg-gradient-jet");
+        background: var.$bg-gradient-jet;
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+        background: var.$bg-gradient-yellow-2;
     }
 
     .arrow {

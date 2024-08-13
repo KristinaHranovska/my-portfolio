@@ -13,7 +13,6 @@
 
 .titleAbout {
     @extend %main-title;
-    color: fn.get-color("white-2");
 
     position: relative;
     padding-bottom: 7px;
@@ -41,7 +40,6 @@
 
 .textAbout {
     @extend %main-text;
-    color: fn.get-color("light-gray");
 }
 
 .textAboutAccent {
