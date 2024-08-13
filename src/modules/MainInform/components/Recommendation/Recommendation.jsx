@@ -1,8 +1,10 @@
+import style from './Recommendation.module.scss';
+
 const Recommendation = () => {
   return (
-    <>
-      <h2>Recommendation</h2>
-    </>
+    <div>
+      <h2 className={style.recomTitle}>Recommendation</h2>
+    </div>
   );
 };
 

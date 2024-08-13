@@ -1,0 +1,9 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.recomTitle {
+    @extend %secondary-title;
+    margin-bottom: 20px;
+}
