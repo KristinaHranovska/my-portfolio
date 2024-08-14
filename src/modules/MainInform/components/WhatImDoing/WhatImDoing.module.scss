@@ -24,10 +24,10 @@
 }
 
 .doingItem {
+    @include mixins.set-border-radius("small");
     position: relative;
     background: fn.get-color("border-gradient-onyx");
     padding: 20px;
-    border-radius: 14px;
     box-shadow: fn.get-color("shadow-2");
     z-index: 1;
 

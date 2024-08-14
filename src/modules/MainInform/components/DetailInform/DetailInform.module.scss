@@ -1,0 +1,112 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.modalRecomendation {
+    @include mixins.media("tablet") {
+        @include mixins.set-border-radius("large");
+        display: flex;
+        gap: 35px;
+    }
+}
+.containerPhoto {
+    position: relative;
+    @include mixins.media("tablet") {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+.imageContainer {
+    @include mixins.set-border-radius("small");
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: fn.get-color("bg-gradient-onyx");
+    box-shadow: fn.get-color("shadow-1");
+
+    margin-bottom: 20px;
+
+    @include mixins.media("tablet") {
+        @include mixins.set-border-radius("large");
+    }
+}
+
+.thumbIcon {
+    @include mixins.ease("medium", "transform");
+    position: absolute;
+    top: 0;
+    left: 85px;
+    background: fn.get-color("border-gradient-onyx");
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: fn.get-color("shadow-1");
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        transform: scale(1.1);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: fn.get-color("eerie-black-1");
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    @include mixins.media("tablet") {
+        left: 0px;
+        top: 85px;
+        border-radius: 12px;
+    }
+}
+
+.iconSocial {
+    display: block;
+    stroke: fn.get-color("orange-yellow-crayola");
+    fill: fn.get-color("transparent");
+
+    // @include mixins.media("tablet") {
+    //     width: 22px;
+    //     height: 22px;
+    // }
+}
+
+.iconQuote {
+    fill: fn.get-color("orange-yellow-crayola");
+}
+
+.name {
+    @extend %secondary-title;
+}
+
+.position {
+    @extend %main-text;
+
+    color: fn.get-color("light-gray-70");
+}
+
+.date {
+    @extend %main-text;
+
+    color: fn.get-color("light-gray-70");
+    margin-bottom: 10px;
+}
+
+.post {
+    @extend %main-text;
+    max-height: 200px;
+    margin-right: 15px;
+}

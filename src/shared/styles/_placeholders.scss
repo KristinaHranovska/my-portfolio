@@ -8,7 +8,7 @@
     font-size: map-get(var.$font-sizes, "xxs");
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
 
     text-transform: capitalize;
 
@@ -21,7 +21,7 @@
     font-size: map-get(var.$font-sizes, "xxs");
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
 
     text-transform: uppercase;
 
@@ -34,7 +34,7 @@
     font-size: map-get(var.$font-sizes, "sm");
     font-weight: 300;
     line-height: 1.6;
-    letter-spacing: -0.03em;
+    // letter-spacing: 0.02em;
     color: fn.get-color("light-gray");
 
     @include mx.media("tablet") {
@@ -46,7 +46,7 @@
     font-size: map-get(var.$font-sizes, "xl");
     font-weight: 600;
     line-height: 1.6;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
     color: fn.get-color("white-2");
 
     text-transform: capitalize;
@@ -60,7 +60,7 @@
     font-size: map-get(var.$font-sizes, "lg");
     font-weight: 600;
     line-height: 1.6;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
     color: fn.get-color("white-2");
 
     text-transform: capitalize;
@@ -73,7 +73,7 @@
     font-size: map-get(var.$font-sizes, "md");
     font-weight: 600;
     line-height: 1.5;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
     color: fn.get-color("white-2");
 
     text-transform: capitalize;
@@ -87,7 +87,7 @@
     font-size: map-get(var.$font-sizes, "sm");
     font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    // letter-spacing: -0.03em;
     color: fn.get-color("orange-yellow-crayola");
 
     text-transform: capitalize;

@@ -1,5 +1,5 @@
 .myScroll .os-scrollbar {
-    --os-size: 8px;
+    --os-size: 5px;
     --os-track-bg: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
     --os-track-bg-hover: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
     --os-handle-bg: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
@@ -13,9 +13,3 @@
 .myScroll .os-scrollbar:hover {
     cursor: pointer;
 }
-
-/* @media (min-width: 768px) {
-    .myScroll .os-scrollbar {
-        --os-handle-max-size: 235px;
-    }
-} */

@@ -67,11 +67,11 @@
 }
 
 .recommendationContent {
+    @include mixins.set-border-radius("small");
     position: relative;
     background: fn.get-color("border-gradient-onyx");
     padding: 15px;
     padding-top: 45px;
-    border-radius: 14px;
     box-shadow: fn.get-color("shadow-2");
     cursor: pointer;
     z-index: 1;
@@ -92,17 +92,17 @@
 }
 
 .imageContainer {
+    @include mixins.set-border-radius("small");
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(15px, -25px);
     background: fn.get-color("bg-gradient-onyx");
-    border-radius: 14px;
     box-shadow: fn.get-color("shadow-1");
 
     @include mixins.media("tablet") {
+        @include mixins.set-border-radius("large");
         transform: translate(30px, -30px);
-        border-radius: 20px;
     }
 }
 
