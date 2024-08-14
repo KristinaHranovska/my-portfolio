@@ -1,0 +1,151 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.thumbBlog {
+    margin-bottom: 15px;
+
+    @include mixins.media("tablet") {
+        margin-bottom: 40px;
+    }
+}
+
+.titleBlog {
+    @extend %main-title;
+
+    position: relative;
+    padding-bottom: 7px;
+    margin-bottom: 15px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 3px;
+        background: fn.get-color("text-gradient-yellow");
+        border-radius: 3px;
+
+        @include mixins.media("tablet") {
+            width: 40px;
+            height: 5px;
+        }
+    }
+    @include mixins.media("tablet") {
+        margin-bottom: 20px;
+    }
+}
+
+.blogList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    @include mixins.media("tablet") {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+.postLink {
+    @include mixins.set-border-radius("small");
+    display: block;
+    position: relative;
+    background: fn.get-color("border-gradient-onyx");
+    height: 100%;
+    box-shadow: fn.get-color("shadow-4");
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: fn.get-color("eerie-black-1");
+        z-index: -1;
+    }
+}
+
+.blogBoxImg {
+    @include mixins.set-border-radius("small");
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    @include mixins.media("addsize") {
+        height: 230px;
+    }
+}
+
+.blogImg {
+    @include mixins.ease("medium", "transform");
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover,
+    &:active,
+    &:focus {
+        transform: scale(1.1);
+    }
+}
+
+.blogContent {
+    padding: 15px;
+    @include mixins.media("tablet") {
+        padding: 25px;
+    }
+}
+
+.blogContentTitle {
+    @extend %post-title;
+}
+
+.loadMoreBtn {
+    @include mixins.ease("medium", "transform", "background");
+    @extend %show-more;
+    width: 100%;
+    position: relative;
+    background: fn.get-color("border-gradient-onyx");
+    color: fn.get-color("orange-yellow-crayola");
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    padding: 15px;
+    margin: 0 auto;
+
+    &:hover,
+    &:active,
+    &:focus {
+        transform: scale(1.05);
+        background: fn.get-color("bg-gradient-yellow-1");
+    }
+
+    &::before {
+        @include mixins.ease("medium", "background");
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: fn.get-color("eerie-black-1");
+        border-radius: inherit;
+        z-index: -1;
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+        background: var.$bg-gradient-yellow-2;
+    }
+
+    @include mixins.media("tablet") {
+        width: 200px;
+        border-radius: 12px;
+    }
+}

@@ -77,11 +77,6 @@
     display: block;
     stroke: fn.get-color("orange-yellow-crayola");
     fill: fn.get-color("transparent");
-
-    // @include mixins.media("tablet") {
-    //     width: 22px;
-    //     height: 22px;
-    // }
 }
 
 .iconQuote {
