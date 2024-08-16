@@ -3,7 +3,7 @@ import style from '../Education/Education.module.scss';
 
 const Experience = () => {
   return (
-    <div>
+    <div className={style.timeline}>
       <div className={style.educationWrapper}>
         <div className={style.iconBox}>
           <svg className={style.iconBook} width="16" height="16">

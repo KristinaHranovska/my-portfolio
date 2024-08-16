@@ -1,0 +1,90 @@
+@use "shared/styles/placeholders";
+@use "shared/styles/variables" as var;
+@use "shared/styles/functions" as fn;
+@use "shared/styles/mixins";
+
+.certificatesTitle {
+    @extend %secondary-title;
+
+    margin-bottom: 15px;
+
+    @include mixins.media("tablet") {
+        margin-bottom: 20px;
+    }
+}
+
+.certificatesList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    @include mixins.media("tablet") {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+.certificatesItem {
+    @include mixins.ease("medium", "transform");
+    @include mixins.set-border-radius("small");
+    display: block;
+    position: relative;
+    background: fn.get-color("border-gradient-onyx");
+    height: 100%;
+    box-shadow: fn.get-color("shadow-4");
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: fn.get-color("eerie-black-1");
+        z-index: -1;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        transform: scale(1.05);
+    }
+}
+
+.certificatesBoxImg {
+    @include mixins.set-border-radius("small");
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    @include mixins.media("addsize") {
+        height: 230px;
+    }
+}
+
+.certificatesImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.certificatesContent {
+    padding: 15px;
+    @include mixins.media("tablet") {
+        padding: 25px;
+    }
+}
+.certificatesDate {
+    @extend %main-text;
+    color: fn.get-color("light-gray-70");
+}
+
+.certificatesContentTitle {
+    @extend %post-title;
+}
+
+.certificatesCompany {
+    @extend %main-text;
+    color: fn.get-color("light-gray-70");
+}
