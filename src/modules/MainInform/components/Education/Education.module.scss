@@ -3,6 +3,10 @@
 @use "shared/styles/functions" as fn;
 @use "shared/styles/mixins";
 
+.timeline {
+    margin-bottom: 30px;
+}
+
 .educationWrapper {
     display: flex;
     align-items: center;
@@ -112,4 +116,8 @@
 .timelineItemPosition {
     @extend %main-text;
     color: fn.get-color("light-gray-70");
+}
+
+.experienceItem {
+    margin-left: 10px;
 }
