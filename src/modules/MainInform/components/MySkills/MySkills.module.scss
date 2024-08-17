@@ -88,3 +88,19 @@
     @extend %main-text;
     color: fn.get-color("light-gray-70");
 }
+
+.mySkillsList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.mySkillsItem {
+    @include mixins.ease("medium", "transform");
+    &:hover,
+    &:active,
+    &:focus {
+        transform: scale(1.2);
+    }
+}
