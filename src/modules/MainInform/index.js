@@ -9,3 +9,5 @@ export { default as Education } from './components/Education/Education';
 export { default as Experience } from './components/Experience/Experience';
 export { default as MySkills } from './components/MySkills/MySkills';
 export { default as ResumeComponent } from './components/ResumeComponent/ResumeComponent';
+export { default as PortfolioComponents } from './components/PortfolioComponents/PortfolioComponents';
+export { default as PortfolioList } from './components/PortfolioList/PortfolioList';

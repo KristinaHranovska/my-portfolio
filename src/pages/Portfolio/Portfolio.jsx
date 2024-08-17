@@ -1,12 +1,12 @@
 import { Information } from 'modules/ContactsInform';
-import { GeneralInform } from 'modules/MainInform';
+import { GeneralInform, PortfolioComponents } from 'modules/MainInform';
 
 const Portfolio = () => {
   return (
     <main>
       <Information />
       <GeneralInform>
-        <h2>Portfolio</h2>
+        <PortfolioComponents />
       </GeneralInform>
     </main>
   );
