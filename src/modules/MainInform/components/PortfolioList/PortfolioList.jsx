@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { gsap } from 'gsap';
 import projects from 'shared/data/projects';
 import style from './PortfolioList.module.scss';
 import clsx from 'clsx';
@@ -6,6 +7,7 @@ import { icons as sprite } from 'shared/icons/index';
 
 const PortfolioList = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const projectListRef = useRef(null);
 
   const uniqueTypes = [
     'All',
@@ -16,6 +18,22 @@ const PortfolioList = () => {
     selectedCategory === 'All'
       ? projects
       : projects.filter((project) => project.type === selectedCategory);
+
+  useEffect(() => {
+    const items = projectListRef.current.children;
+
+    gsap.fromTo(
+      items,
+      { scale: 0, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+      }
+    );
+  }, [filteredProjects]);
 
   return (
     <>
@@ -33,13 +51,14 @@ const PortfolioList = () => {
         ))}
       </ul>
 
-      <ul className={style.projectList}>
+      <ul ref={projectListRef} className={style.projectList}>
         {filteredProjects.map((project) => (
           <li key={project.id}>
             <a
               className={style.projectLink}
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className={style.pojectBoxImg}>
                 <img

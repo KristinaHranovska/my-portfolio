@@ -51,8 +51,19 @@
 
     @include mixins.media("tablet") {
         padding: 5px 18px;
+        margin-bottom: 10px;
     }
     @include mixins.media("desktop") {
         margin: auto;
+        margin-bottom: 10px;
+    }
+
+    &.downloadCV {
+        color: fn.get-color("orange-yellow-crayola");
+
+        @include mixins.media("desktop") {
+            display: block;
+            margin: auto;
+        }
     }
 }

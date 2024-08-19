@@ -3,6 +3,10 @@ import { useModalContext } from 'context/useModalContext';
 import { ModalWindow, SharedLayout } from 'shared/components';
 import { About, Blog, Portfolio, Resume } from './pages';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const App = () => {
   const { isOpen, modalContent } = useModalContext();
   return (

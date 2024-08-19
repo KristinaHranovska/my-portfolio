@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
+    "aos": "^3.0.0-beta.6",
     "axios": "^1.6.8",
     "clsx": "^2.1.0",
+    "gsap": "^3.12.5",
     "modern-normalize": "^2.0.0",
     "overlayscrollbars": "^2.8.3",
     "overlayscrollbars-react": "^0.5.6",

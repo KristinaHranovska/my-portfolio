@@ -21,6 +21,13 @@ const PersonalInformation = () => {
       <div>
         <h2 className={style.name}>Hranovska Krystyna</h2>
         <p className={style.position}>FrontEnd developer</p>
+        <a
+          className={`${style.downloadCV} ${style.position}`}
+          href="https://drive.google.com/file/d/1D1MkxleBsCCEiXl35I_Fjdn1R-p7HZQU/view?usp=drive_link"
+          target="_blank"
+        >
+          Download CV
+        </a>
       </div>
     </div>
   );

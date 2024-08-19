@@ -1,8 +1,19 @@
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import style from './AboutMe.module.scss';
 
 const AboutMe = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      containerRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+    );
+  }, []);
   return (
-    <div className={style.thumbAbout}>
+    <div ref={containerRef} className={style.thumbAbout}>
       <h2 className={style.titleAbout}>About me</h2>
 
       <p className={style.textAbout}>

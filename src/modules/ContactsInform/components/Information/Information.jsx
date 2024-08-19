@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react';
+import { gsap } from 'gsap';
 import {
   ContactsInformation,
   PersonalInformation,
   SocialsInformations,
 } from 'modules/ContactsInform';
 import style from './Information.module.scss';
-import { useEffect, useState } from 'react';
 import { icons as sprite } from 'shared/icons/index';
 import { useMedia } from 'hooks/useMedia';
 
@@ -28,21 +29,44 @@ const Information = () => {
 
   const handleClickVisiable = () => {
     if (visiable) {
-      setTimeout(() => {
-        setContentVisible(false);
-        setCollapsing(true);
-        setTimeout(() => {
-          setVisiable(false);
-          setCollapsing(false);
-        }, 500);
-      }, 300);
+      // Анімація закриття сайдбару
+      gsap.to(`.${style.sidebar}`, {
+        x: -300,
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+          setContentVisible(false);
+          setCollapsing(true);
+          setTimeout(() => {
+            setVisiable(false);
+            setCollapsing(false);
+            gsap.set(`.${style.sidebar}`, { x: 0, opacity: 1 });
+          }, 500);
+        },
+      });
     } else {
       setVisiable(true);
       setTimeout(() => {
         setContentVisible(true);
+        // Анімація відкриття сайдбару
+        gsap.fromTo(
+          `.${style.sidebar}`,
+          { x: -300, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.5 }
+        );
       }, 300);
     }
   };
+
+  useEffect(() => {
+    if (contentVisible) {
+      gsap.fromTo(
+        `.${style.content}`,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
+      );
+    }
+  }, [contentVisible]);
 
   return (
     <aside
